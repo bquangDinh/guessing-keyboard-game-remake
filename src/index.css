@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,html{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    overflow: hidden;
+}
+
+body *{
+    box-sizing: border-box;
+	font-family: 'Fernando';
+}

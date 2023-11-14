@@ -1,0 +1,54 @@
+$base-color: #EDD3B2;
+
+.game-area {
+	width: 100vw;
+	height: 100vh;
+	background-color: $base-color;
+	padding: 10px;
+}
+
+.keyboard-selection-panel {
+	width: 95%;
+    height: 95%;
+    background-color: #545454;
+    position: relative;
+}
+
+.scoreboard {
+	width: 95%;
+    height: 95%;
+    background-color: #EEE9E3;
+    position: relative;
+}
+
+.game-btn {
+	width: 80%;
+	height: 90px;
+	border-radius: 5px;
+	background-color: #545454;
+	color: white;
+	font-size: 1.4em;
+	margin-bottom: 10px;
+}
+
+.bold-shadow {
+	border: 5px solid #3A3A3A;
+	box-shadow: 5px 5px rgba(0, 0, 0, 0.4);
+	transition: all .2s;
+}
+
+.bold-shadow:hover {
+	box-shadow: 0px 0px rgba(0, 0, 0, 0.4);
+}
+
+.bold-border {
+	border: 5px solid #3A3A3A;
+}
+
+.sm-shadow {
+	box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.4);
+}
+
+.bg-shadow {
+	box-shadow: 5px 5px rgba(0, 0, 0, 0.4);
+}
