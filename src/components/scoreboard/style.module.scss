@@ -1,0 +1,13 @@
+.scoreboard-container {
+	height: $upper-half-height;
+	background-color: $primary-color;
+
+	.missed-text {
+		color: $red-color;
+	}
+
+	.score-text, .missed-text {
+		-webkit-text-stroke-width: 3px;
+  		-webkit-text-stroke-color: black;
+	}
+}

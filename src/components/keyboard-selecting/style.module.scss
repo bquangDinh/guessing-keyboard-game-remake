@@ -1,0 +1,45 @@
+.keyboard-selecting-container {
+	height: 75%;
+
+	table {
+		padding: 0;
+
+		tr {
+			td {
+				border: 1px solid $black-color;
+				width: 33.3333%;
+
+				&:first-child {
+					border-left: 0;
+				}
+
+				&:last-child {
+					border-right: 0;
+				}
+			}
+		}
+	}
+
+	.customized-radio {
+		.customized-radio-div {
+			background-color: $secondary-color;
+			color: $text-dark-color;
+			width: 90%;
+			height: 70px;
+			border-radius: 0;
+			font-size: 1em;
+		}
+
+		&[data-dummy="true"] {
+			cursor: not-allowed;
+		}
+	}
+
+	.dummy {
+		background-color: $primary-color;
+		width: 90%;
+		height: 70px;
+		border-radius: 0;
+		font-size: 1em;
+	}
+}
