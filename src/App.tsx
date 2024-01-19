@@ -10,7 +10,7 @@ function App() {
 			<LevelSelecting></LevelSelecting>
 		</div>
 		<div className='col-span-6'>
-			<div className='middle-panel bold-shadow w-full'>
+			<div className='middle-panel upper-half-container bold-shadow w-full'>
 				<KeyboardSelecting></KeyboardSelecting>
 
 				<div className='play w-full flex justify-center items-center'>

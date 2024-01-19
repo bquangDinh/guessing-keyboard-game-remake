@@ -7,9 +7,7 @@
 
 .middle-panel {
 	background-color: $primary-color;
-	height: $upper-half-height;
 }
-
 
 .play {
 	height: 25%;
@@ -57,6 +55,7 @@
 		background-color: $red-color;
 		color: $text-light-color;
 		z-index: 2;
+		padding-bottom: 8px;
 	}
 }
 

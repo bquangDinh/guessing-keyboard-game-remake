@@ -7,7 +7,11 @@ $lighten-dark-color: #3A3A3A;
 $text-light-color: #F2EDDC;
 $text-dark-color: #262626;
 
-$upper-half-height: 450px;
+$upper-half-height: 45vh;
+
+.upper-half-container {
+	height: $upper-half-height;
+}
 
 .radio-btn-container {
 	width: 80%;
@@ -38,12 +42,16 @@ $upper-half-height: 450px;
 		background-color: $black-color;
 
 		color: $text-light-color;
-		font-size: 1.2em;
 
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		padding-bottom: 8px;
+
+		&:active {
+			background-color: $black-color !important;
+			color: $red-color !important;
+		}
 	}
 }
 

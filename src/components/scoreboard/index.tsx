@@ -2,7 +2,7 @@ import React from "react";
 import style from './style.module.scss'
 
 export function Scoreboard() {
-	return <div className={style['scoreboard-container'] + ' bold-shadow flex justify-around items-center flex-col'}>
+	return <div className={style['scoreboard-container'] + ' upper-half-container bold-shadow flex justify-around items-center flex-col'}>
 		<div className='w-9/12'>
 			<p className='text-center text-xl'>Score</p>
 			<p className={style['score-text'] + ' text-center text-8xl text-white'}>256</p>
