@@ -1,0 +1,55 @@
+.in-game-container {
+	position: relative;
+
+	.switch-timer-bar-outer {
+		position: relative;
+
+		.switch-timer-bar-inner {
+			height: 100%;
+			width: 100%;
+			background-color: $secondary-color;
+
+			transform-origin: top left;
+			transform: scaleX(0.7);
+		}
+	}
+
+	.main-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		.middle-container {
+			flex: 1;
+			width: 100%;
+
+			.key {
+				color: $black-color;
+				margin-bottom: 50px;
+			}
+		}
+
+		.top-container, .bottom-container {
+			flex: 0.25;
+			width: 100%;
+		}
+
+		.bottom-container {
+			.stop-btn {
+				display: block;
+				width: 200px;
+				height: 40px;
+				background-color: $red-color;
+				color: $text-light-color;
+				padding-bottom: 8px;
+
+				&:hover {
+					background-color: $black-color;
+					color: $red-color;
+				}
+			}
+		}
+	}
+}
