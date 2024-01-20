@@ -27,10 +27,16 @@ export interface GameStates {
 	keyboard: Keyboards,
 	score: number,
 	missed: number,
+	currentCharacter: string,
+	pressedKey: string | undefined,
+	aboutToTimeout: boolean,
 
 	setLevel: (level: GameLevels) => void,
 	setKeyboard: (keyboard: Keyboards) => void,
 	setStatus: (status: GameStatuses) => void,
+	setCurrentCharacter: (character: string) => void,
+	setAboutToTimeout: (val: boolean) => void,
+	setPressedKey: (key: string | undefined) => void,
 	increaseScore: () => void,
 	increaseMissed: () => void,
 	resetNumbers: () => void,
@@ -43,8 +49,11 @@ export const useStore = create<GameStates>()(
 				status: GameStatuses.SELECTING,
 				level: GameLevels.NORMAL,
 				keyboard: Keyboards.ANSI104,
+				currentCharacter: '',
+				pressedKey: undefined,
 				score: 0,
 				missed: 0,
+				aboutToTimeout: false,
 
 				setLevel: (level: GameLevels) => set(() => ({
 					level
@@ -54,6 +63,15 @@ export const useStore = create<GameStates>()(
 				})),
 				setStatus: (status: GameStatuses) => set(() => ({
 					status
+				})),
+				setCurrentCharacter: (character: string) => set(() => ({
+					currentCharacter: character,
+				})),
+				setPressedKey: (key: string | undefined) => set(() => ({
+					pressedKey: key
+				})),
+				setAboutToTimeout: (val: boolean) => set(() => ({
+					aboutToTimeout: val
 				})),
 				increaseScore: () => set((state) => ({
 					score: state.score + 1
@@ -67,7 +85,11 @@ export const useStore = create<GameStates>()(
 				}))
 			}),
 			{
-				name: 'gameStates'
+				name: 'gameStates',
+				partialize: (state) => ({
+					level: state.level,
+					keyboard: state.keyboard
+				})
 			}
 		)
 	)

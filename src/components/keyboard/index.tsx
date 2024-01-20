@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useRef, useState } from 'react'
 import { KEYBOARD_LAYOUTS, KeyboardLayout } from '../../configs/keyboards.config'
-import { Keyboards, useStore } from '../../store'
+import { GameStatuses, Keyboards, useStore } from '../../store'
 import style from './style.module.scss'
 import { Key } from './key'
 
@@ -20,7 +20,7 @@ export function Keyboard() {
 
 	const keyboardContainerInnerRef = useRef<HTMLDivElement>(null)
 
-	const { keyboard } = useStore()
+	const { keyboard, setPressedKey, currentCharacter, aboutToTimeout, status } = useStore()
 
 	useEffect(() => {
 		if (keyboard === Keyboards.ANSI104) {
@@ -105,7 +105,9 @@ export function Keyboard() {
 						size: {w, h}
 					}
 
-					keys.push(<Key keyname={key} x={x} y={y} w={w} h={h} key={`${rowIndex}-${keyIndex}`}></Key>)
+					keys.push(<Key keyname={key} x={x} y={y} w={w} h={h} show={status === GameStatuses.SELECTING || aboutToTimeout && currentCharacter === key} highlighted={aboutToTimeout && currentCharacter === key} key={`${rowIndex}-${keyIndex}`} onClick={() => {
+						setPressedKey(key)
+					}}></Key>)
 
 					// reset
 					lx = 0;

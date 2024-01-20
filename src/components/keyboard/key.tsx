@@ -6,10 +6,12 @@ type Props = {
 	x: number,
 	y: number,
 	w: number,
-	h: number
+	h: number,
+	show: boolean,
+	highlighted: boolean,
 } & React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
-export function Key({ keyname, x, y, w, h, className, style : st, ...divProps }: Props) {
+export function Key({ keyname, x, y, w, h, show, highlighted, className, style : st, ...divProps }: Props) {
 	return <div
 		className={style['key'] + ' ' + className ?? ''}
 		style={{
@@ -55,8 +57,10 @@ export function Key({ keyname, x, y, w, h, className, style : st, ...divProps }:
 					}}
 				></div>
 			</div>
-			<div className={style['top-div']}>
-				<div className={style['keyname']}>{ keyname }</div>
+			<div className={style['top-div'] + ' ' + (highlighted ? style['hinted'] : '')}>
+				<div className={style['keyname']} style={{
+					visibility: show ? 'visible' : 'hidden'
+				}}>{ keyname }</div>
 			</div>
 		</div>
 }

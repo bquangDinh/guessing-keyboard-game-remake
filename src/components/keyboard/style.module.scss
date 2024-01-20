@@ -110,7 +110,7 @@ $key_color: #D9D9D9;
 					font-size: 8px;
 				}
 
-				&:hover {
+				&:hover, &.hinted {
 					transform: scale(1.1);
 					background-color: $black-color;
 					color: $red_color;
