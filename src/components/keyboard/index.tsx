@@ -106,7 +106,9 @@ export function Keyboard() {
 					}
 
 					keys.push(<Key keyname={key} x={x} y={y} w={w} h={h} show={status === GameStatuses.SELECTING || aboutToTimeout && currentCharacter === key} highlighted={aboutToTimeout && currentCharacter === key} key={`${rowIndex}-${keyIndex}`} onClick={() => {
-						setPressedKey(key)
+						if (status === GameStatuses.PLAYING) {
+							setPressedKey(key)
+						}
 					}}></Key>)
 
 					// reset

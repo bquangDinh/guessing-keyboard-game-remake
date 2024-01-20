@@ -1,10 +1,15 @@
+.main-container {
+	background-color: $background-color;
+}
+
 .game-area {
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	background-color: $background-color;
 	padding: 10px;
 	overflow: hidden;
+	z-index: 2;
+	position: relative;
 
 	.control-panel {
 		flex: 0.5;
@@ -12,7 +17,49 @@
 
 	.keyboard-panel {
 		flex: 0.5;
+
+		position: relative;
+
+		padding-top: 10px;
+
+		.left-div {
+			position: absolute;
+			width: 40px;
+			height: 40vh;
+			background-color: $black-color;
+			left: -10px;
+			writing-mode: vertical-rl;
+			text-orientation: sideways;
+			color: $text-light-color;
+			text-align: center;
+		}
 	}
+}
+
+.top-line {
+	position: absolute;
+	height: 10px;
+	width: 100vw;
+
+	top: 50vh;
+	left: -50vw;
+
+	z-index: 1;
+
+	transform: rotateZ(-45deg);
+}
+
+.bottom-line {
+	position: absolute;
+	height: 10px;
+	width: 100vw;
+
+	top: 50vh;
+	left: 50vw;
+
+	z-index: 1;
+
+	transform: rotateZ(-45deg);
 }
 
 .middle-panel {

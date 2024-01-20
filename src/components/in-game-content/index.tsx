@@ -123,12 +123,14 @@ export function InGameContent() {
 				}
 			}
 
-			if (switchCurrentDuration <= 0) {
-				if (!timerResetted) {
-					resetTimer()
+			if (!timerResetted) {
+				if (switchCurrentDuration <= 0) {
+					if (!timerResetted) {
+						resetTimer()
+					}
+				} else {
+					setSwitchCurrentDuration(switchCurrentDuration - 0.1)
 				}
-			} else {
-				setSwitchCurrentDuration(switchCurrentDuration - 0.1)
 			}
 		}, 100)
 

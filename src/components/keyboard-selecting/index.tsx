@@ -74,7 +74,9 @@ export function KeyboardSelecting() {
 					<td>
 						<div className='w-full h-full flex justify-center items-center'>
 							<label className={'radio-btn-container ' + style['customized-radio']} data-dummy="true">
-								<div className={style['dummy'] + ' bold-shadow'}></div>
+								<a className={style['dummy'] + ' bold-shadow flex justify-center items-center'} href="https://github.com/bquangDinh/guessing-keyboard-game-remake" target="_blank" rel="noopener noreferrer">
+									Github {'->'}
+								</a>
 							</label>
 						</div>
 					</td>
