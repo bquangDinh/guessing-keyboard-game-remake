@@ -1,0 +1,121 @@
+$key_color: #D9D9D9;
+
+.keyboard-container {
+	background-color: $secondary-color;
+	border-radius: 10px;
+	padding: 20px;
+
+	.keyboard-container-inner {
+		// background-color: $black-color;
+		border-radius: 5px;
+		position: relative;
+
+		.key {
+			background-color: $black-color;
+			position: absolute;
+
+			.bottom-div {
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+
+				.arrow {
+					position: absolute;
+					width: 0;
+					height: 0;
+				}
+
+				.left-arrow {
+					border-top-style: solid;
+					border-top-color: transparent;
+
+					border-bottom-style: solid;
+					border-bottom-color: transparent;
+
+					border-left-style: solid;
+					border-left-color: $key_color;
+
+					top: 5px;
+					left: 5px;
+				}
+
+				.right-arrow {
+					border-top-style: solid;
+					border-top-color: transparent;
+
+					border-bottom-style: solid;
+					border-bottom-color: transparent;
+
+					border-right-style: solid;
+					border-right-color: $key_color;
+
+					top: 5px;
+					right: 5px;
+				}
+
+				.bottom-arrow {
+					border-right-style: solid;
+					border-right-color: transparent;
+
+					border-left-style: solid;
+					border-left-color: transparent;
+
+					border-bottom-style: solid;
+					border-bottom-color: $key_color;
+
+					bottom: 5px;
+					right: 5px;
+					left: 5px;
+				}
+
+				.top-arrow {
+					border-right-style: solid;
+					border-right-color: transparent;
+
+					border-left-style: solid;
+					border-left-color: transparent;
+
+					border-top-style: solid;
+					border-top-color: $key_color;
+
+					top: 5px;
+					right: 5px;
+					left: 5px;
+				}
+			}
+
+			.top-div {
+				position: absolute;
+				top: 22%;
+				left: 22%;
+				right: 22%;
+				bottom: 22%;
+				z-index: 2;
+
+				background-color: $key_color;
+				border: 1px solid $black-color;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				transform: scale(1);
+				transition: transform .1s;
+
+				cursor: pointer;
+
+				.keyname {
+					font-size: 8px;
+				}
+
+				&:hover {
+					transform: scale(1.1);
+					background-color: $black-color;
+					color: $red_color;
+				}
+			}
+		}
+	}
+}

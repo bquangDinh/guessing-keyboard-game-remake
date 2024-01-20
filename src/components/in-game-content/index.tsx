@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from './style.module.scss'
-import { GameLevel, GameStatus, useStore } from "../../store";
+import { GameLevels, GameStatuses, useStore } from "../../store";
 import { GAME_CONFIGS } from "../../configs/game.config";
 
 export function InGameContent() {
@@ -11,10 +11,10 @@ export function InGameContent() {
 	const [switchCurrentDuration, setSwitchCurrentDuration] = useState(duration);
 
 	useEffect(() => {
-		if (level === GameLevel.EASY) setDuration(GAME_CONFIGS.EASY_DURATION)
-		if (level === GameLevel.NORMAL) setDuration(GAME_CONFIGS.NORMAL_DURATION)
-		if (level === GameLevel.HARDCORE) setDuration(GAME_CONFIGS.HARDCORE_DURATION)
-		if (level === GameLevel.SERIOUS) setDuration(GAME_CONFIGS.SERIOUS_DURATION)
+		if (level === GameLevels.EASY) setDuration(GAME_CONFIGS.EASY_DURATION)
+		if (level === GameLevels.NORMAL) setDuration(GAME_CONFIGS.NORMAL_DURATION)
+		if (level === GameLevels.HARDCORE) setDuration(GAME_CONFIGS.HARDCORE_DURATION)
+		if (level === GameLevels.SERIOUS) setDuration(GAME_CONFIGS.SERIOUS_DURATION)
 	}, [level])
 
 	useEffect(() => {
@@ -36,7 +36,7 @@ export function InGameContent() {
 	});
 
 	const onStopClicked = () => {
-		setStatus(GameStatus.SELECTING);
+		setStatus(GameStatuses.SELECTING);
 	}
 
 	return <div className={style['in-game-container'] + ' w-full h-full'}>

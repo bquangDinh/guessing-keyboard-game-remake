@@ -1,8 +1,18 @@
 .game-area {
-	width: 100vw;
 	height: 100vh;
+	display: flex;
+	flex-direction: column;
 	background-color: $background-color;
 	padding: 10px;
+	overflow: hidden;
+
+	.control-panel {
+		flex: 0.5;
+	}
+
+	.keyboard-panel {
+		flex: 0.5;
+	}
 }
 
 .middle-panel {
@@ -56,6 +66,11 @@
 		color: $text-light-color;
 		z-index: 2;
 		padding-bottom: 8px;
+
+		&:hover {
+			background-color: $black-color;
+			color: $red-color;
+		}
 	}
 }
 

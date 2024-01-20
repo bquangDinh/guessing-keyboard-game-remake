@@ -1,14 +1,14 @@
 import { create } from "zustand";
 import { devtools, persist } from 'zustand/middleware'
 
-export enum GameLevel {
+export enum GameLevels {
 	EASY,
 	NORMAL,
 	HARDCORE,
 	SERIOUS
 }
 
-export enum Keyboard {
+export enum Keyboards {
 	ANSI104,
 	DEFAULT60,
 	JD40,
@@ -16,43 +16,43 @@ export enum Keyboard {
 	LEOPOLD,
 }
 
-export enum GameStatus {
+export enum GameStatuses {
 	SELECTING,
 	PLAYING,
 }
 
-export interface GameState {
-	status: GameStatus,
-	level: GameLevel,
-	keyboard: Keyboard,
+export interface GameStates {
+	status: GameStatuses,
+	level: GameLevels,
+	keyboard: Keyboards,
 	score: number,
 	missed: number,
 
-	setLevel: (level: GameLevel) => void,
-	setKeyboard: (keyboard: Keyboard) => void,
-	setStatus: (status: GameStatus) => void,
+	setLevel: (level: GameLevels) => void,
+	setKeyboard: (keyboard: Keyboards) => void,
+	setStatus: (status: GameStatuses) => void,
 	increaseScore: () => void,
 	increaseMissed: () => void,
 	resetNumbers: () => void,
 }
 
-export const useStore = create<GameState>()(
+export const useStore = create<GameStates>()(
 	devtools(
 		persist(
 			(set) => ({
-				status: GameStatus.SELECTING,
-				level: GameLevel.NORMAL,
-				keyboard: Keyboard.ANSI104,
+				status: GameStatuses.SELECTING,
+				level: GameLevels.NORMAL,
+				keyboard: Keyboards.ANSI104,
 				score: 0,
 				missed: 0,
 
-				setLevel: (level: GameLevel) => set(() => ({
+				setLevel: (level: GameLevels) => set(() => ({
 					level
 				})),
-				setKeyboard: (keyboard: Keyboard) => set(() => ({
+				setKeyboard: (keyboard: Keyboards) => set(() => ({
 					keyboard
 				})),
-				setStatus: (status: GameStatus) => set(() => ({
+				setStatus: (status: GameStatuses) => set(() => ({
 					status
 				})),
 				increaseScore: () => set((state) => ({
